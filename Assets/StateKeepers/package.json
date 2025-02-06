@@ -1,0 +1,20 @@
+{
+  "name": "io.mrwatts.statekeepers",
+  "version": "1.0.0",
+  "displayName": "StateKeepers",
+  "description": "This package contains scripts for conveniently implementing State Keeping.",
+  "unity": "6000.0",
+  "keywords": [
+    "Mr. Watts",
+    "StateKeeper",
+    "StateKeepers"
+  ],
+  "author": {
+    "name": "Mr. Watts",
+    "email": "hello@mrwatts.io",
+    "url": "https://www.mrwatts.io"
+  },
+  "publishConfig": {
+    "registry": "https://gitlab.com/api/v4/projects/27157125/packages/npm/"
+  }
+}
