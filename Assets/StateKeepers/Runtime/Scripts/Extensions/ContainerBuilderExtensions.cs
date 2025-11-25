@@ -8,17 +8,7 @@ namespace MrWatts.Internal.StateKeepers
     {
         public static void RegisterTypedStateKeeper<T>(this ContainerBuilder builder, T initialValue = default!)
         {
-            builder
-                .RegisterType<StateKeeper<T>>()
-                .AsSelf()
-                .SingleInstance();
-
-            builder
-                .Register(b => new EventEmittingStateKeeper<T>(b.Resolve<StateKeeper<T>>()))
-                .As<IStateKeeper<T>>()
-                .AsSelf()
-                .SingleInstance()
-                .OnActivating(args => args.Instance.State = initialValue);
+            builder.RegisterTypedStateKeeper<T>(args => args.Instance.State = initialValue);
         }
 
         public static void RegisterTypedStateKeeper<T>(this ContainerBuilder builder, Action<IActivatingEventArgs<EventEmittingStateKeeper<T>>> activator)
